@@ -1,16 +1,17 @@
 h1{
-    background-color: green;
+    color: #000;
 
 }
 #a{
     color: red;
     background-color: yellow;
+    font-size: 20px;
 }
 .b{
-    border: 10px solid;
+    border: 3px solid;
 }
 h1,h2{
-    color: blueviolet;
+    color: rgb(0, 0, 0);
 }
 div p{
     color: brown;
@@ -21,6 +22,36 @@ div>p{
     background-color: lightgreen;
 }
 button[type="submit"]{
-    color: rebeccapurple;
+    color: black;
     font-size: 32px;
+}
+ul li:nth-child(2){
+    color: red;
+    font-size: 20px;
+    
+}
+ol li:nth-child(2){
+    color: red;
+    font-size: 20px;
+   
+}
+li:hover{
+    color: black;
+    background-color: red;
+    font-size: 35px;
+}
+#r::before{
+    content: "Hello ";
+}
+.b::first-letter{
+    color: red;
+    font-size: 40px;
+}
+#q{
+    display: block;
+}
+#q::first-letter{
+    color: red;
+    font-size: 40px;
+
 }
