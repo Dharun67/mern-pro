@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f0f2f5;
+}
+
+.dashboard-container{
+    display:flex;
+    height:100vh;
+}
+
+.sidebar{
+    width:200px;
+    background:#002447;
+    color:white;
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar-header{
+    padding:20px;
+    border-bottom:1px solid #4b545c;
+}
+
+.sidebar-menu{
+    list-style:none;
+    padding-top:20px;
+}
+
+.sidebar-menu li a{
+    display:block;
+    padding:12px 20px;
+    text-decoration:none;
+    color:#c2c7d0;
+    transition:0.3s;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active{
+    background:#495057;
+    color:white;
+}
+
+.main-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+}
+
+.content-header{
+    background:#2044e3;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.summary-cards-grid{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.content-cards-grid{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:5px;
+    box-shadow:0px 3px 6px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.03) translateY(-5px);
+    box-shadow:0px 10px 18px rgba(0,0,0,0.15);
+}
+
+.summary-card{
+    border-left:4px solid #2044e3;
+    font-weight:bold;
+}
+
+.main-card{
+    display:flex;
+    align-items:center;
+    font-weight:500;
+    color:#333;
+}
+
+@media(max-width:900px){
+    .summary-cards-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .content-cards-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .summary-cards-grid{
+        grid-template-columns:1fr;
+    }
+    .content-cards-grid{
+        grid-template-columns:1fr;
+    }
+    .sidebar{
+        width:120px;
+    }
+    .content-header h1{
+        font-size:20px;
+    }
+}
