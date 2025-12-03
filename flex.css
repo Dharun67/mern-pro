@@ -1,0 +1,21 @@
+.flexcontainer
+{
+    border: 1px solid red;
+    display :flex;
+    height : 90vh;
+    gap : 10px ;
+
+    flex-wrap: wrap;
+     align-content: center;
+}
+.flexitem
+{
+    background-color: yellow;
+    border : 2px solid red;
+    colour: red;
+    width: 100px;
+    height: 100px;
+    font-size: 24px;
+
+
+}
