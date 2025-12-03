@@ -1,33 +1,201 @@
-.flexcontainer
-{
-    border: 1px solid red;
-    display :flex;
-    height : 90vh;
-    gap : 10px ;
+/* .fixedContainer{ 
+    border: 1px solid black;
+    display: flex;
+    height: 90vh;
+    /* justify-content: center; */
+    /* align-items: center;*/
+   /* gap: 20px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    */
+   /* justify-content: space-evenly;
+   gap: 10px;
+   flex-wrap: wrap; 
 
-    
 }
-/* wrap values no wrap ,wrap ,wrap reverse */
-.flexitem
-{
+.fixedItem{
     background-color: yellow;
-    border : 2px solid red;
-    colour: red;
-    width: 100px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
     height: 100px;
-    font-size: 24px;
-
-
+    width: 100px;
+    text-align: center;
 }
+/* value justify-content: 
+   flex-start | flex-end | center | space-between | space-around | space-evenly 
+*/
+/* value align-items: 
+   flex-start | flex-end | center | stretch | baseline 
 
-.flexitem:nth-child(1)
-{
-    order : 1;
+.fixedItem:nth-child(1){
+   order: 1;
    align-self: center;
-}
-.flexitem:nth-child(6)
-{
-    order :-1;
-   align-self :flex-end;
 
+
+}
+.fixedItem:nth-child(6){
+   order: -1;
+   align-self: flex-end;
+
+}
+*/
+
+.header h1{
+   text-align: center;
+}
+.flex-container{
+   display: flex;
+   flex-direction: row;
+   border: 1px solid black ;
+   align-content: space-evenly;
+}
+.flex-item{
+   margin: 5px;
+   flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+}
+.flex-direction-row{
+   border: 1px solid black;
+}
+.justify-center{
+   border: 1px solid black;
+   justify-content: center;
+   display: flex;
+   flex-direction: row;
+   align-content: center;
+   margin: 3px;
+}
+.justify-content{
+   border: 1px solid black;
+   justify-content: space-between;
+   display: flex;
+   flex-direction: row;
+   margin: 3px;
+}
+
+.align-items{
+   border: 1px solid black;
+   align-items: center;
+   display: flex;
+   flex-direction: row;
+   margin: 3px;
+}
+.flex-items{
+      margin: 5px;
+   flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+}
+.flex-items:nth-child(2){
+   height: 80px;
+ 
+}
+.flex-items1{
+   margin: 5px;
+   flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+   justify-content: space-around;
+   width: 100px;
+   height: 30px;
+}
+
+.flex-items2{
+   margin: 5px;
+   flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+   height: 50px;
+   width: 20px;
+}
+.flex-items3{
+   margin: 10px;
+   flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+}
+
+.flex-items3:nth-child(1){
+   width: 30%;
+}
+.flex-items3:nth-child(2){
+   width: 65%;
+}
+.flex-items3:nth-child(3){
+   width: 5%;
+}
+.align-items1{
+   border: 1px solid black;
+   align-items: center;
+   display: flex;
+   flex-direction: row;
+   margin: 3px;
+}
+.flex-items4{
+   margin: 5px;
+    flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+   justify-content: space-around;
+   width: 100px;
+   height: 30px;
+
+}
+.flex-items5{
+   margin: 5px;
+    flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+   justify-content: space-around;
+   width: 100px;
+   height: 30px;
+
+}
+.flex-items5:nth-child(2){
+   width: 50px;
+   text-align: center;
+}
+
+.flex-items6{
+   margin: 5px;
+    flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+   height: 50px;
+   width: 50px;
+   text-align: center;
+
+}
+.flex-items7{
+   margin: 5px;
+    flex-direction: row;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: lightblue;
+   height: 40px;
+   width: 40px;
+   text-align: center;
+}
+.flex-items7:nth-child(2){
+   width: 60px;
+   flex-direction: column;
+   margin-top: 70px;
+   text-align: center;
+}
+.flex-items7:nth-child(3){
+   width: 60px;
+   flex-direction: column;
+   margin-top: 130px;
+   text-align: center;
 }
