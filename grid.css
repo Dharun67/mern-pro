@@ -5,7 +5,11 @@
     display: grid;
     grid-template-columns: repeat(4 , 1fr);
     grid-template-rows: 100px 100px;
-   
+   /* row-gap: 10px;
+   column-gap: 10px;
+   gap: 10px;
+   justify-content: s; */
+   align-content: center;
 .griditem
 {
     color: red;
