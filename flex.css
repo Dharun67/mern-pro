@@ -5,9 +5,9 @@
     height : 90vh;
     gap : 10px ;
 
-    flex-wrap: wrap;
-     align-content: center;
+    
 }
+/* wrap values no wrap ,wrap ,wrap reverse */
 .flexitem
 {
     background-color: yellow;
@@ -17,5 +17,17 @@
     height: 100px;
     font-size: 24px;
 
+
+}
+
+.flexitem:nth-child(1)
+{
+    order : 1;
+   align-self: center;
+}
+.flexitem:nth-child(6)
+{
+    order :-1;
+   align-self :flex-end;
 
 }
