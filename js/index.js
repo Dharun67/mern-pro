@@ -132,109 +132,132 @@
 
 
 //q1 
-function createarray(a,b,c)
-{
-    return [a,b,c];
-}
+// function createarray(a,b,c)
+// {
+//     return [a,b,c];
+// }
 
-let result =createarray(1,2,3);
-console.log(result);
+// let result =createarray(1,2,3);
+// console.log(result);
 
-function createArrayDynamic(...values) {
-    return values;
-}
+// function createArrayDynamic(...values) {
+//     return values;
+// }
 
-let output = createArrayDynamic(5, 10, 15, 20, 25);
-console.log(output);
+// let output = createArrayDynamic(5, 10, 15, 20, 25);
+// console.log(output);
 
-//q2
+// //q2
 
-function stringOnly(...items) {
-    let arr = [];
-    for (let i = 0; i < items.length; i++) {
-        if (typeof items[i] === "string") {
-            arr.push(items[i]);
-        }
-    }
-    return arr;
-}
+// function stringOnly(...items) {
+//     let arr = [];
+//     for (let i = 0; i < items.length; i++) {
+//         if (typeof items[i] === "string") {
+//             arr.push(items[i]);
+//         }
+//     }
+//     return arr;
+// }
 
-console.log(stringOnly("a", 10, "hello", true, "js"));
-
-
-function square(...numbers) {
-    let squaredNumbers = [];    
-    for (let i = 0; i < numbers.length; i++) {
-        squaredNumbers.push(numbers[i] * numbers[i]);
-    }
-
-    return squaredNumbers;
-}           
-console.log(square(1, 2, 3, 4, 5));
+// console.log(stringOnly("a", 10, "hello", true, "js"));
 
 
-function evennumers(...numbers)
-{
-    let evenNumbers = [];
-    for (let i = 0; i < numbers.length; i++) {
-        if (numbers[i] % 2 === 0) {
-            evenNumbers.push(numbers[i]);
-        }
-    }
-    return evenNumbers;
-}     
-    console.log(evennumers(1,2,3,4,5,6,7,8,9,10));
+// function square(...numbers) {
+//     let squaredNumbers = [];    
+//     for (let i = 0; i < numbers.length; i++) {
+//         squaredNumbers.push(numbers[i] * numbers[i]);
+//     }
+
+//     return squaredNumbers;
+// }           
+// console.log(square(1, 2, 3, 4, 5));
 
 
-    //q5
+// function evennumers(...numbers)
+// {
+//     let evenNumbers = [];
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] % 2 === 0) {
+//             evenNumbers.push(numbers[i]);
+//         }
+//     }
+//     return evenNumbers;
+// }     
+//     console.log(evennumers(1,2,3,4,5,6,7,8,9,10));
 
-    function touppercase(...strings)
-    {
-        let uppercasedStrings = [];
-        for (let i = 0; i < strings.length; i++) {
-            uppercasedStrings.push(strings[i].toUpperCase());
-        }
-        return uppercasedStrings;
-    }   
-    console.log(touppercase("hello","world","javascript"));
 
-    //q6
+//     //q5
 
-   function makeUser(name, age, city)
-   {
-    return {
-        name: name,
-        age: age,
-        city: city
-    };  
+//     function touppercase(...strings)
+//     {
+//         let uppercasedStrings = [];
+//         for (let i = 0; i < strings.length; i++) {
+//             uppercasedStrings.push(strings[i].toUpperCase());
+//         }
+//         return uppercasedStrings;
+//     }   
+//     console.log(touppercase("hello","world","javascript"));
 
-   }
-    console.log(makeUser("Alice", 30, "New York"));
+//     //q6
 
-     //q7 
+//    function makeUser(name, age, city)
+//    {
+//     return {
+//         name: name,
+//         age: age,
+//         city: city
+//     };  
 
-     function addten(...numbers)
-     {
-        let addedNumbers = [];
-        for (let i = 0; i < numbers.length; i++) {
-            addedNumbers.push(numbers[i] + 10);
-        }
-        return addedNumbers;    
-     }
-        console.log(addten(1,2,3,4,5));
+//    }
+//     console.log(makeUser("Alice", 30, "New York"));
 
-        //q8
+//      //q7 
+
+//      function addten(...numbers)
+//      {
+//         let addedNumbers = [];
+//         for (let i = 0; i < numbers.length; i++) {
+//             addedNumbers.push(numbers[i] + 10);
+//         }
+//         return addedNumbers;    
+//      }
+//         console.log(addten(1,2,3,4,5));
+
+//         //q8
     
-        function fruitarray(...fruits)
-        {
-            if(fruits.length==0)
-            {
-                return ["Apple","Banana",];
-            }
-            else{
-                return fruits;
+//         function fruitarray(...fruits)
+//         {
+//             if(fruits.length==0)
+//             {
+//                 return ["Apple","Banana",];
+//             }
+//             else{
+//                 return fruits;
 
-            }
-        }
-        console.log(fruitarray());
-        console.log(fruitarray("Mango","Orange"));  
+//             }
+//         }
+//         console.log(fruitarray());
+//         console.log(fruitarray("Mango","Orange"));  
+
+
+
+
+        //reduce method for the truthy values
+//filter methdo for otr convdnien
+
+
+        let a=[0,1,2,,3,,4,5,,6,7,8,9];
+        let b=a.filter((value,index)=>
+        {
+            return index %2===1;
+        });
+        console.log(b);
+
+//reduce return a single value 
+
+  let c= a.reduce((acc,el,index)=>
+  {
+    console.log(acc,el);
+    return acc+el;
+  },200)
+  console.log(c);
