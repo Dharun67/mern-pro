@@ -23,11 +23,42 @@ checkBtn.addEventListener("click",()=>{
     //3.1 Input value is equal to random number
     if(inputVal === randomNumber){
         console.log("Value is correct")
+        document.querySelector("body").style.backgroundColor = "green";
+        msg.textContent = "You are correct";
+        number.textContent = randomNumber;
     } else if(inputVal > randomNumber){
-        console.log()
+        scr-=1;
+        score.textContent = scr;
+        msg.textContent = "Too High";
     }
-    //3.1.1 Change the bg to green
-    //3.1.2 Instead of ? put the random value
-    // console.log("Button clicked",randomNumber);
-    // console.log(randomNumber);
+    else if(inputVal < randomNumber){
+        scr-=1;
+        score.textContent = scr;
+        msg.textContent = "Too Low";
+    }
+    else{
+        msg.textContent = "No Number";
+    }
 });
+   
+// againbutton 
+
+againBtn.addEventListener("click",()=>{
+    //1. reset score
+    scr = 20;
+    score.textContent = scr;
+    //2. generate new random number
+    randomNumber = Math.trunc(Math.random()*20)+1;
+    //3. reset message
+    msg.textContent = "Start guessing...";
+    //4. reset number
+    number.textContent = "?";
+    //5. reset input field
+    guess.value = "";
+    //6. reset background color
+    document.querySelector("body").style.backgroundColor = "#222";
+}
+);
+    // console.log("Button clicked", randomNumber);
+
+    // console.log(ra
