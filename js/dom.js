@@ -1,23 +1,71 @@
-// tag selector 
-let h1= document.getElementsByTagName("h1");
-// html collection array
-console.log(h1[1]);
+// // // tag selector
 
-// class selector
-let h3= document.getElementsByClassName("a");
-console.log(h3[0]);
+// // let t = document.getElementsByTagName("p");
+// // console.log(t);
 
-// id selector
-let h2= document.getElementById("b");
-// it will return single element and the first element
-console.log(h2);
+// // // class selector
+// // let c = document.getElementsByClassName("a");
+// // console.log(c);
 
-//query selector (it will works on all the three selector)
-let h4= document.querySelector("#b");
-// it will return single element and the first element
-console.log(h4);
+// // // id selector  
+// // let i = document.getElementById("b");
+// // console.log(i); 
+// // // query selector
+// // let q = document.querySelector(".a");
+// // console.log(q); 
 
-//query selector all
-let h5= document.querySelectorAll(".a");
-// nodelist array
-console.log(h5[0]);
+// // // query selector all   
+
+// // let qa = document.querySelectorAll("p");
+// // console.log(qa);    
+
+// // read and write opertaions 
+
+// let head = document.querySelector("p");
+// console.log(head.innerText);  // read operation
+// head.textContent = "Hello World"; // write operation
+
+// let div = document.querySelector("div");
+// div.innerHTML = "<h1>This is heading</h1>";
+// console.log(div.innerHTML);
+// div.textContent = "<h1>This is heading with text comteny]</h1>";
+// console.log(div.textContent);
+
+
+
+let head  = document.querySelector("h1");
+console.log(head);
+
+head.classList.add("Color");
+head.classList.remove("border");
+head.classList.toggle("backgroundcolor");
+
+
+//styling 
+
+let p = document.querySelector("p");
+p.style.color = "red";
+p.style.backgroundColor = "yellow";
+p.style.border = "2px solid black";
+p.style.padding = "10px";   
+p.style.fontSize = "20px";
+
+let ul = document.createElement("ul");
+
+let lii = document.createElement("li");   // FIXED
+lii.textContent = "Item 1";
+let liii = document.createElement("li");
+liii.textContent = "Item 2";
+
+ul.appendChild(liii);
+ul.appendChild(lii);   // FIXED (li1 was undefined)
+
+document.body.appendChild(ul);
+
+let arr = ["apple", "banana", "grapes", "mango"];
+
+arr.forEach((element) => {
+    let lo = document.createElement("li");
+    lo.textContent = element;
+    ul.appendChild(lo);
+});
