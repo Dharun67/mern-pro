@@ -1,64 +1,92 @@
-//1 we need all the instance
-let againBtn = document.querySelector(".again");
-let number = document.querySelector(".number");
-let guess = document.querySelector(".guess");
-let checkBtn = document.querySelector(".check");
-let score = document.querySelector(".score");
-let highScore = document.querySelector(".highscore");
-let msg = document.querySelector(".message");
 
-//2. Generate ranom num btw 1 and 20
-let randomNumber = Math.trunc(Math.random()*20)+1;
+// 1. GET ALL ELEMENT REFERENCES
 
-//2.1 craete  variable of score
-let scr = 20;
+let text = document.querySelector("#text");
+let box = document.querySelector("#box");
+let itemInput = document.querySelector("#itemInput");
+let list = document.querySelector("#list");
 
-//BUtton functionalities
-//2 args in eventlistener => 1. event that we want to occur 2. callback
-//3. check button func
-checkBtn.addEventListener("click",()=>{
-    let inputVal = Number(guess.value);
-    console.log(randomNumber);
-    // when we get input value it will be string
-    //3.1 Input value is equal to random number
-    if(inputVal === randomNumber){
-        console.log("Value is correct")
-        document.querySelector("body").style.backgroundColor = "green";
-        msg.textContent = "You are correct";
-        number.textContent = randomNumber;
-    } else if(inputVal > randomNumber){
-        scr-=1;
-        score.textContent = scr;
-        msg.textContent = "Too High";
+// Buttons
+let btnText = document.querySelector("#btnText");
+let btnColor = document.querySelector("#btnColor");
+let btnHide = document.querySelector("#btnHide");
+let btnShow = document.querySelector("#btnShow");
+let btnAdd = document.querySelector("#btnAdd");
+
+// 2. BUTTON FUNCTIONALITIES USING addEventListener
+
+
+// 2.1 Change Text
+btnText.addEventListener("click", () => {
+    text.textContent = "Text has been changed!";
+});
+
+
+// 2.2 Change Box Background Color
+btnColor.addEventListener("click", () => {
+    let randomColor = "#" + Math.floor(Math.random() * 1000000);
+    box.style.backgroundColor = randomColor;
+});
+
+
+// 2.3 Hide Box
+btnHide.addEventListener("click", () => {
+    box.style.display = "none";
+});
+
+
+// 2.4 Show Box
+btnShow.addEventListener("click", () => {
+    box.style.display = "flex";
+});
+
+
+// 2.5 Add Item to List + save to localStorage
+btnAdd.addEventListener("click", () => {
+    let value = itemInput.value;
+
+    if (!value) {
+        alert("Please enter an item");
+        return;
     }
-    else if(inputVal < randomNumber){
-        scr-=1;
-        score.textContent = scr;
-        msg.textContent = "Too Low";
+
+    let li = document.createElement("li");
+    li.textContent = value;
+
+    list.appendChild(li);
+
+    saveItems();   // store list permanently
+    itemInput.value = "";
+});
+
+
+
+// 3. Save List Items to localStorage
+
+let saveItems = () => {
+    let items = [];
+
+    for (let i = 0; i < list.children.length; i++) {
+        items.push(list.children[i].textContent);
     }
-    else{
-        msg.textContent = "No Number";
+
+    localStorage.setItem("myItems", JSON.stringify(items));
+};
+
+
+
+// 4. Load items when page opens
+
+window.addEventListener("load", () => {
+    let saved = localStorage.getItem("myItems");
+
+    if (saved) {
+        let items = JSON.parse(saved);
+
+        for (let i = 0; i < items.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = items[i];
+            list.appendChild(li);
+        }
     }
 });
-   
-// againbutton 
-
-againBtn.addEventListener("click",()=>{
-    //1. reset score
-    scr = 20;
-    score.textContent = scr;
-    //2. generate new random number
-    randomNumber = Math.trunc(Math.random()*20)+1;
-    //3. reset message
-    msg.textContent = "Start guessing...";
-    //4. reset number
-    number.textContent = "?";
-    //5. reset input field
-    guess.value = "";
-    //6. reset background color
-    document.querySelector("body").style.backgroundColor = "#222";
-}
-);
-    // console.log("Button clicked", randomNumber);
-
-    // console.log(ra
