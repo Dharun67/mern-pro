@@ -69,3 +69,4 @@ arr.forEach((element) => {
     lo.textContent = element;
     ul.appendChild(lo);
 });
+
